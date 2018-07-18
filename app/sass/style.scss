@@ -1,0 +1,113 @@
+@mixin anima($time: 300ms) {
+    -webkit-transition: all $time ease;
+    -moz-transition: all $time ease;
+    -o-transition: all $time ease;
+    transition: all $time ease;
+}
+
+#iwebDoc{
+    background: #FAF8F7;
+
+    .sidebar{
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 300px;
+        height: 100vh;
+        display: inline-block;
+        vertical-align: top;
+        background: rgb(7, 71, 166);
+        padding-top: 30px;
+        .logotipo{
+            margin: auto;
+            display: block;
+        }
+        &__menu{
+            padding: 0 20px;
+            .menu{
+                &__item{
+                    list-style: none;
+                    border-bottom: 1px dotted rgba(255,255,255,0.4);
+                    @include anima();
+                    &:hover{
+                        border-color: #FFF;
+                    }
+                }
+                &__link{
+                    font-family: 'itau-text-regular';
+                    color: #FFF;
+                    font-size: 14px;
+                    padding: 16px 0px;
+                    padding-left: 5px;
+                    display: block;
+                    opacity: .7;
+                    @include anima();
+                    &:hover{
+                        padding-left: 15px;
+                        opacity: 1;
+                    }
+                }
+            }
+        }
+    }
+    main{
+        width: calc(100% - 300px);
+        display: inline-block;
+        vertical-align: top;
+        padding-top: 40px;
+        padding-left: 40px;
+        padding-right: 40px;
+        margin-left: 300px;
+
+        .container{
+            margin-left: 0;
+            
+        }
+        hr{
+            margin: 50px 0 0 0;
+        }
+        h1{
+            font-family: 'itau-display-xbold';
+            font-size: 44px;
+            text-transform: lowercase;
+            margin-bottom: 20px;
+        }
+        h2{
+            font-family: 'itau-display-xbold';
+            font-size: 32px;
+            text-transform: lowercase;
+            margin-bottom: 20px;
+            margin-top: 40px;
+        }
+        h3{
+            font-family: 'itau-display-xbold';
+            font-size: 22px;
+            text-transform: lowercase;
+            margin-bottom: 20px;
+            margin-top: 40px;
+        }
+        p{
+            font-family: 'itau-text-regular';
+            font-size: 16px;
+            line-height: 26px;
+            margin-bottom: 20px;
+        }
+        table{
+            font-family: 'itau-text-regular';
+            font-size: 14px;
+            line-height: 24px;
+
+            caption{
+                font-size: 13px;
+            }
+            thead{
+                th{
+                    font-family: 'itau-display-xbold';
+                    font-size: 16px;
+                    text-transform: lowercase;
+                }
+            }
+        }
+    }
+
+}
